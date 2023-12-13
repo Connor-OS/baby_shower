@@ -1,0 +1,23 @@
+<!doctype html>
+<title>{% block title %}Baby O'Shaughnessy's shower{% endblock %}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<nav>
+    <a href={{ url_for('gift_inspo.gift_inspo') }}>
+        <h1>Liam's shower</h1>
+    </a>
+{#    <a href="{{ url_for('index.index') }}">Home</a>#}
+</nav>
+
+<section class="content">
+    <div class="header">
+        <header>
+          {% block header %}{% endblock %}
+        </header>
+    </div>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</section>

@@ -1,0 +1,294 @@
+
+/* Global Styles */
+html {
+    font-family: sans-serif;
+    background: #4ec4ef;
+    padding: 1rem;
+}
+
+body {
+    max-width: 800px; /* Adjust the max-width for better readability */
+    margin: 0 auto;
+    background: #4ec4ef; /* Set an autumnal background color */
+}
+
+.content {
+    margin-top: 20px;
+}
+
+/* Add spacing between content and form */
+.content form {
+    margin-top: 20px;
+}
+
+h1 {
+    color: #084164;
+    margin: 1rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ /* unvisited link */
+.link {
+    color: #002aff;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+/* visited link */
+.link:visited {
+    color: green;
+}
+
+/* mouse over link */
+.link:hover {
+    color: #540585;
+}
+
+/* selected link */
+.link:active {
+    color: blue;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #424c8f;
+}
+
+nav {
+    background: #3f96c5;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+nav h1 {
+    flex: auto;
+    margin: 0;
+}
+
+nav h1 a {
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a,
+nav ul li span,
+header .action {
+    display: block;
+    padding: 0.5rem;
+}
+
+.content {
+    padding: 0 1rem 1rem;
+}
+
+.content > header {
+    border-bottom: 1px solid #2d3d7c;
+    display: flex;
+    align-items: flex-end;
+}
+
+.content > header h2 {
+    flex: auto;
+    margin: 1rem 0 0.25rem 0;
+}
+
+.flash {
+    margin: 1em 0;
+    padding: 1em;
+    background: #379fa8;
+    border: 1px solid #378aa8;
+}
+
+.gift .about {
+    color: slategray;
+    font-style: italic;
+}
+
+.gift .body {
+    white-space: pre-line;
+}
+
+.gift:hover {
+    background-color: #4e81ef;
+}
+
+.bought_True:hover {
+    background-color: #939393;
+}
+
+/* Gift List Styles */
+.gift_list > li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    border-bottom: 1px solid #2e4a91;
+}
+
+.gift_list > li > p {
+    margin: 0;
+}
+
+.gift_list > li > p:first-of-type {
+    flex: 1;
+    margin-right: 1em;
+}
+
+.gift_list > li > p:last-of-type {
+    flex: 0 0 35%;
+}
+
+/* Response Section Styles */
+.response_section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow elements to wrap to the next line */
+}
+
+#submit_gifts {
+    width: 100%; /* Adjust the width as needed */
+    max-width: 400px; /* Set a maximum width */
+    margin-right: 1em; /* Add spacing between the form and the gift list */
+}
+
+.response_section > div {
+    width: 100%; /* Take full width */
+    max-width: 400px; /* Set a maximum width */
+}
+/* Gift Grid Styles */
+.gifts {
+    display: flex;
+    flex-direction: column; /* Change from grid to column layout */
+    gap: 0px;
+}
+
+.gift {
+    border: 1px solid #429bda;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px; /* Add margin between cards */
+}
+
+
+.bought_True {
+    background: rgb(176, 170, 170);
+    filter: brightness(50%);
+}
+
+.gift header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.gift h2 {
+    margin-bottom: 0; /* Remove margin bottom for heading */
+    font-size: 1.5em; /* Set font size for heading */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 0 0 8px 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.gift_summary {
+    border: 1px solid #429bda;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.gift_title {
+    font-size: 1.8em;
+}
+
+.gift_description {
+    margin-bottom: 10px;
+}
+
+.gift_price {
+    font-size: 1.2em;
+}
+
+.gift_close_img {
+    /*width: 100%;*/
+    max-width: 400px; /* Adjust the max-width based on your preference */
+    max-height: 400px; /* Ensure the image isn't stretched */
+    float: right;
+    margin-left: 20px; /* Add spacing between image and text */
+}
+
+.gift_img {
+    height: auto;
+    width: auto;
+    float: right;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.response_section {
+    margin-top: 20px;
+}
+
+#submit_gifts {
+    display: flex;
+    flex-direction: column;
+}
+
+#submit_gifts label {
+    margin-bottom: 5px;
+}
+
+#submit_gifts input,
+#submit_gifts textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#submit_gifts button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit_gifts button:hover {
+    background-color: #45a049;
+}
+
+.google-map {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+}
+
+.banner {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}

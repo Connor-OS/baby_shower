@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <article class="gift_summary">
+
+        <header>
+            <a target="_blank" href="{{gift.link}}">
+                <h1 class="gift_title">{{ gift.name }}</h1>
+            </a>
+
+            <div class="gift_description">
+                <p>{{gift.description}}</p>
+                <p class="gift_price"> {{ "£" + gift.price }}</p>
+            </div>
+
+            <a target="_blank" href="{{gift.link}}">
+                <img class="gift_close_img" src="{{ "static/" + gift.image }}">
+            </a>
+        </header>
+
+
+        <div class="response_section">
+            <form method="post" action="{{ url_for('gift_inspo.gift_inspo') }}" enctype="multipart/form-data" id="submit_gifts">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <input type="hidden" name="gift_id" value={{ gift.gift_id }}>
+
+                <button type="submit">Reserve gift</button>
+            </form>
+        </div>
+    </article>
+
+{% endblock %}
