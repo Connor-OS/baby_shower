@@ -9,13 +9,13 @@ from baby_shower_app.entitites import Base
 
 def get_db():
     if 'db' not in g:
-        g.db = create_engine(f"sqlite:///{current_app.config['DATABASE']}", echo=True)
+        g.db = create_engine(current_app.config['DATABASE'], echo=True)
 
     return g.db
 
 
 def init_db():
-    engine = create_engine(f"sqlite:///{current_app.config['DATABASE']}", echo=True)
+    engine = create_engine(current_app.config['DATABASE'], echo=True)
 
     Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
