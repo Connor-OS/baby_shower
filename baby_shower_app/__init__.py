@@ -32,7 +32,7 @@ def create_app(test_config=None):
         return 'Hello World!'
 
     db.init_app(app)
-    db.init_db()
+    #db.init_db()
 
     app.register_blueprint(gift_inspo.bp)
 
