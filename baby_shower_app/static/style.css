@@ -2,14 +2,14 @@
 /* Global Styles */
 html {
     font-family: sans-serif;
-    background: #4ec4ef;
+    background: #A7C7E7 ;
     padding: 1rem;
 }
 
 body {
     max-width: 800px; /* Adjust the max-width for better readability */
     margin: 0 auto;
-    background: #4ec4ef; /* Set an autumnal background color */
+    background: #A7C7E7 ; /* Set an autumnal background color */
 }
 
 .content {
