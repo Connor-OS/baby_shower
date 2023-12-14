@@ -11,6 +11,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY='dev',
+        DATABASE='postgres://nrflrxdmryqghr:74d7e68b4aaba0ce6761eef41bab6b4a9d953fd1ba6692d0d0437b4e703c133e@ec2-3-233-79-30.compute-1.amazonaws.com:5432/d6qq7ndkue73oc'
     )
 
     if test_config is None:
