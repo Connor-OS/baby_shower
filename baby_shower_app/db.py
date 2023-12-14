@@ -22,7 +22,7 @@ def init_db():
 
     with engine.connect() as connection:
         gift_df = pd.read_csv("./baby_shower_app/static/test_db_seed.csv")
-        gift_df.to_sql("Gift", con=connection, index=False, if_exists="append")
+        gift_df.to_sql("gift", con=connection, index=False, if_exists="append")
 
 
 @click.command('init-db')
