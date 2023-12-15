@@ -1,5 +1,6 @@
 import sqlalchemy as sqla
-from sqlalchemy.orm import Mapped, DeclarativeBase, mapped_column
+from sqlalchemy import ForeignKey
+from sqlalchemy.orm import Mapped, DeclarativeBase, mapped_column, relationship
 
 
 class Base(DeclarativeBase):
@@ -11,7 +12,7 @@ class Gift(Base):
 
     __tablename__ = "gift"
 
-    gift_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    gift_id = sqla.Column(sqla.Integer, primary_key=True, autoincrement=True)
     name = sqla.Column(sqla.String(), nullable=False)
     description = sqla.Column(sqla.String(), nullable=False)
     price = sqla.Column(sqla.String(), nullable=False)
@@ -19,14 +20,16 @@ class Gift(Base):
     image = sqla.Column(sqla.String(), nullable=False)
     bought = sqla.Column(sqla.Boolean(), nullable=False)
 
+    guests = relationship("Guest", back_populates="gift")
 
 class Guest(Base):
     """Stores Submission information."""
 
     __tablename__ = "guest"
 
-    guest_id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    guest_id = sqla.Column(sqla.Integer, primary_key=True, autoincrement=True)
     name = sqla.Column(sqla.String(), nullable=False)
-    # email = sqla.Column(sqla.String(), nullable=True)
     message = sqla.Column(sqla.String(), nullable=True)
-    # gift_bought: Mapped[List["Gift"]] = sqla.orm.relationship(back_populates="gift_id")
+    gift_id = sqla.Column(sqla.Integer, sqla.ForeignKey("gift.gift_id"))
+
+    gift = relationship("Gift", back_populates="guests")

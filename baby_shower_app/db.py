@@ -15,10 +15,18 @@ def get_db():
 
 
 def init_db():
-    engine = create_engine(current_app.config['DATABASE'], echo=True)
+    engine = get_db()
 
     Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
+
+    with engine.connect() as connection:
+        gift_df = pd.read_csv("./baby_shower_app/static/test_db_seed.csv")
+        gift_df.to_sql("gift", con=connection, index=False, if_exists="append")
+
+
+def add_db():
+    engine = get_db()
 
     with engine.connect() as connection:
         gift_df = pd.read_csv("./baby_shower_app/static/test_db_seed.csv")
@@ -31,6 +39,13 @@ def init_db_command():
     init_db()
     click.echo('Initialized the database.')
 
+@click.command('add-db')
+def add_db_command():
+    """Clear the existing data and create new tables."""
+    init_db()
+    click.echo('Initialized the database.')
+
 
 def init_app(app):
     app.cli.add_command(init_db_command)
+    app.cli.add_command(add_db_command)

@@ -5,13 +5,12 @@ from datetime import datetime
 def send_reserve_email(gift, guest, message):
     port = 465
     password = "wsepqjfbfvdqpkll"
-
+    if not message:
+        message = "<blank>"
     sender_email = "arai.and.connor@gmail.com"
     receiver_email = ["coshaughnessy1@gmail.com", "akhmetovaarailym7@gmail.com"]
     email_template = """\
     Subject: Item {gift} bought by {guest}
-
-    This is a test Email
 
     Hi there, the person {guest} has bought {gift} for you on {time}.
     
@@ -23,5 +22,4 @@ def send_reserve_email(gift, guest, message):
 
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
         server.login("arai.and.connor@gmail.com", password)
-
         server.sendmail(sender_email, receiver_email, email_template)
