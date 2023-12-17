@@ -16,7 +16,9 @@ def get_gift(gift_id):
 
 def get_gift_list():
     with Session(get_db()) as session:
-        return session.scalars(select(Gift)).all()
+        gift_list = session.scalars(select(Gift)).all()
+        gift_list = sorted(gift_list, key=lambda x: float(x.price))
+        return gift_list
 
 
 def reserve_gift(name, message, gift_id):

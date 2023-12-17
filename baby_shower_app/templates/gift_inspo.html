@@ -1,77 +1,81 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
     <img src="static/images/banner-image.jpg" class="banner">
-
-    <p>Dear Friends and Family,</p>
-
-    <p>
-        We happy to know you will be joining the upcoming baby shower for our little one on January 9th,
-        2024, at 5:00pm at the cozy Bangladeshi curry house Ahad’s Kitchen. We can&#39;t wait to share the
-        excitement with you through fun games, heartwarming moments, and the anticipation of welcoming
-        our baby into the world. We understand that some of you may need to make travel arrangements,
-        please let us know your plans at your earliest convenience for restaurant booking.
-        <br>
-        <br><b>Address: 25 Station Rd,</b>
-        <br><b>South Gosforth,</b>
-        <br><b>Newcastle upon Tyne</b>
-        <br>
-    </p>
-
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2288.079084215161!2d-1.6069318883621821!3d55.006778749091566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e7186a3e99df3%3A0x83a6f8c326f07288!2sAhad&#39;s%20Indian%20Kitchen!5e0!3m2!1sen!2suk!4v1702241831555!5m2!1sen!2suk"
-            class="google-map" width="450" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="div_0">
+        <p> January 9, 2024</p>
+        <h3>You are invited to Liam's baby shower</h3>
+    </div>
 
 
-    <p>
-        Since many of you have expressed interest in knowing what would we wish for the baby shower as a
-        gift, we created this website. Instead of acquiring unnecessary baby items, we&#39;ve collected here our
-        wish list here to provide guidance on gifts that align with what we already have and what we&#39;d love
-        to have. We&#39;re committed to maintaining an eco-friendly approach, so if you happen to have pre-
-        loved items from the list feel free to gift it. We&#39;re more than happy with pre-owned baby items that
-        have been well-cared for.
-        Quick favour – if you happen to buy something from the list, shoot us a quick message via the
-        website (little messaging box), so we can remove it from the list to avoid double-gifting shenanigans
-    </p>
+    <div class="div_1">
+        <p>
+            We happy to know you will be joining the upcoming baby shower for our little one on January 9th,
+            2024, at 5:00pm here in Newcastle at a local restaurant (Venue to be confirmed). We can&#39;t wait to share the
+            excitement with you through fun games, heartwarming moments, and the anticipation of welcoming
+            our baby into the world. We understand that some of you may need to make travel arrangements,
+            please let us know your plans at your earliest convenience for restaurant booking.
 
-    <p>
-        You can send your gift to the address:
-        <br>
-        <br><b>55 Sandringham Road</b>
-        <br><b>Newcastle upon Tyne</b>
-        <br><b>NE3 1QB</b>
-        <br>
-        <br>No pressure for gifting, this list is just a guide. We&#39;re beyond excited to see you in person and
-        celebrate this unforgettable family milestone together.
-    </p>
+    </div>
 
-    <h2>REQUEST:</h2>
-    <p>We&#39;re gearing up for some super fun games at the event and we have a little request. Could you
-send us a picture of yourself when you were a tiny tot, preferably between 1-5 years old? We&#39;re
-planning some games that will be extra special with these adorable pictures. Feel free to dig up
-        those cute childhood pics and send them our way. It&#39;s going to be a blast!</p>
+    <div class="div_2">
+        <h2>Gift ideas and guidance</h2>
+        <p>
+            Since many of you have expressed interest in knowing what would we wish for the baby shower as a
+            gift, we created this website. Instead of acquiring unnecessary baby items, we&#39;ve collected here our
+            wish list here to provide guidance on gifts that align with what we already have and what we&#39;d love
+            to have. We&#39;re committed to maintaining an eco-friendly approach, so if you happen to have pre-
+            loved items from the list feel free to gift it. We&#39;re more than happy with pre-owned baby items that
+            have been well-cared for. <br>
+            Quick favour – if you happen to buy something from the list, let us and others know
+            using the "Tell us you're getting this gift button, to avoid double-gifting shenanigans
+        </p>
+    </div>
+
+    <div class="div_3">
+        <p>
+            You can send your gift to the address:
+            <br>
+            <br><b>55 Sandringham Road</b>
+            <br><b>Newcastle upon Tyne</b>
+            <br><b>NE3 1QB</b>
+            <br>
+            <br>No pressure for gifting, this list is just a guide. We&#39;re beyond excited to see you in person and
+            celebrate this unforgettable family milestone together.
+        </p>
+    </div>
 
 
-    <div class="gifts">
-        {% for gift in gift_list %}
-            <article class="gift bought_{{ gift.bought }}">
-                <a target=”_blank” href={{gift.link}}>
-                    <header>
-                        <div>
-                            <h2 name="gift_name">{{ gift.name }}</h2>
-                            <p>{{gift.description}}</p>
-                            <p name="gift_price">{{ "£" + gift.price }}</p>
-                            <p class="link">Link</p>
-                        </div>
-                        <img class="gift_img" src={{ "static/" + gift.image }}>
-                    </header>
-                </a>
-                {% if not gift.bought %}
-                    <a href="{{ url_for('gift_inspo.gift', gift_id=gift.gift_id) }}">
-                        <button>Tell us you're getting this gift</button>
+    <div class="div_4">
+        <h2>REQUEST</h2>
+        <p>We&#39;re gearing up for some super fun games at the event and we have a little request. Could you
+    send us a picture of yourself when you were a tiny tot, preferably between 1-5 years old? We&#39;re
+    planning some games that will be extra special with these adorable pictures. Feel free to dig up
+            those cute childhood pics and send them our way. It&#39;s going to be a blast!</p>
+    </div>
+
+    <div class="div_5">
+        <div class="gifts">
+            {% for gift in gift_list %}
+                <article class="gift bought_{{ gift.bought }}">
+                    <a target=”_blank” href={{gift.link}}>
+                        <header>
+                            <div>
+                                <h2 class="gift_name" name="gift_name">{{ gift.name }}</h2>
+                                <p>{{gift.description}}</p>
+                                <p name="gift_price">{{ "£" + gift.price }}</p>
+                                <p class="link">Link</p>
+                            </div>
+                            <img class="gift_img" src={{ "static/" + gift.image }}>
+                        </header>
                     </a>
-                {% endif %}
-            </article>
-        {% endfor %}
+                    {% if not gift.bought %}
+                        <a href="{{ url_for('gift_inspo.gift', gift_id=gift.gift_id) }}">
+                            <button>Tell us you're getting this gift</button>
+                        </a>
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

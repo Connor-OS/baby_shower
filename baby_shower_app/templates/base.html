@@ -5,19 +5,10 @@
 
 <nav>
     <a href={{ url_for('gift_inspo.gift_inspo') }}>
-        <h1>Liam's shower</h1>
+        <h1>It's a Boy!</h1>
     </a>
-{#    <a href="{{ url_for('index.index') }}">Home</a>#}
 </nav>
 
 <section class="content">
-    <div class="header">
-        <header>
-          {% block header %}{% endblock %}
-        </header>
-    </div>
-    {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
-    {% endfor %}
     {% block content %}{% endblock %}
 </section>
