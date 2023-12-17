@@ -21,7 +21,7 @@ def init_db():
     Base.metadata.create_all(engine)
 
     with engine.connect() as connection:
-        gift_df = pd.read_csv("./baby_shower_app/static/test_db_seed.csv")
+        gift_df = pd.read_csv("./baby_shower_app/static/db_seed.csv")
         gift_df.to_sql("gift", con=connection, index=False, if_exists="append")
 
 
@@ -29,7 +29,7 @@ def add_db():
     engine = get_db()
 
     with engine.connect() as connection:
-        gift_df = pd.read_csv("./baby_shower_app/static/test_db_seed.csv")
+        gift_df = pd.read_csv("./baby_shower_app/static/db_add.csv")
         gift_df.to_sql("gift", con=connection, index=False, if_exists="append")
 
 
@@ -42,8 +42,8 @@ def init_db_command():
 @click.command('add-db')
 def add_db_command():
     """Clear the existing data and create new tables."""
-    init_db()
-    click.echo('Initialized the database.')
+    add_db()
+    click.echo('Added extra database entries.')
 
 
 def init_app(app):

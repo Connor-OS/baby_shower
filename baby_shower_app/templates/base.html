@@ -3,12 +3,16 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<nav>
-    <a href={{ url_for('gift_inspo.gift_inspo') }}>
-        <h1>It's a Boy!</h1>
-    </a>
-</nav>
+<html style="background-image: url({{ url_for('static', filename='images/rainbow-fish-background.jpg') }}); background-size: cover; background-position: center; background-repeat: no-repeat; background-color: #A7C7E7;" lang="en">
 
-<section class="content">
-    {% block content %}{% endblock %}
-</section>
+    <nav>
+        <a href={{ url_for('gift_inspo.gift_inspo') }}>
+            <h1>It's a Boy!</h1>
+        </a>
+    </nav>
+
+    <section class="content">
+        {% block content %}{% endblock %}
+    </section>
+
+</html>

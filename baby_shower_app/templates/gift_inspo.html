@@ -23,11 +23,13 @@
         <p>
             Since many of you have expressed interest in knowing what would we wish for the baby shower as a
             gift, we created this website. Instead of acquiring unnecessary baby items, we&#39;ve collected here our
-            wish list here to provide guidance on gifts that align with what we already have and what we&#39;d love
-            to have. We&#39;re committed to maintaining an eco-friendly approach, so if you happen to have pre-
-            loved items from the list feel free to gift it. We&#39;re more than happy with pre-owned baby items that
-            have been well-cared for. <br>
-            Quick favour – if you happen to buy something from the list, let us and others know
+            wish list to provide guidance on gifts that align with what we already have and what we&#39;d love
+            to have. We&#39;re committed to maintaining an eco-friendly approach, so if you happen to have a pre-loved
+            items from the list feel free to gift it. We&#39;re more than happy with pre-owned baby items that
+            have been well-cared for.
+        </p>
+        <p>
+            <b>Quick favour</b> – if you happen to buy something from the list, let us and others know
             using the "Tell us you're getting this gift button, to avoid double-gifting shenanigans
         </p>
     </div>
@@ -48,10 +50,16 @@
 
     <div class="div_4">
         <h2>REQUEST</h2>
-        <p>We&#39;re gearing up for some super fun games at the event and we have a little request. Could you
-    send us a picture of yourself when you were a tiny tot, preferably between 1-5 years old? We&#39;re
-    planning some games that will be extra special with these adorable pictures. Feel free to dig up
-            those cute childhood pics and send them our way. It&#39;s going to be a blast!</p>
+        <p>
+            We&#39;re gearing up for some super fun games at the event and we have a little request. Could you
+            send us a picture of yourself when you were a tiny tot, preferably between 1-5 years old? We&#39;re
+            planning some games that will be extra special with these adorable pictures. Feel free to dig up
+            those cute childhood pics and send them our way. It&#39;s going to be a blast!
+        </p>
+        <p>
+            You can send your pic to us at:
+            <a href="mailto:arai.and.connor@gmail.com" class="link">arai.and.connor@gmail.com</a>
+        </p>
     </div>
 
     <div class="div_5">
@@ -66,7 +74,7 @@
                                 <p name="gift_price">{{ "£" + gift.price }}</p>
                                 <p class="link">Link</p>
                             </div>
-                            <img class="gift_img" src={{ "static/" + gift.image }}>
+                            <img class="gift_img" src={{ gift.image }}>
                         </header>
                     </a>
                     {% if not gift.bought %}
