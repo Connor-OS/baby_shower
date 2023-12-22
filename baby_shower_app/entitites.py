@@ -28,7 +28,7 @@ class Guest(Base):
     __tablename__ = "guest"
 
     guest_id = sqla.Column(sqla.Integer, primary_key=True, autoincrement=True)
-    name = sqla.Column(sqla.String(), nullable=False)
+    name = sqla.Column(sqla.String(), nullable=True)
     message = sqla.Column(sqla.String(), nullable=True)
     gift_id = sqla.Column(sqla.Integer, sqla.ForeignKey("gift.gift_id"))
 

@@ -30,7 +30,7 @@ def reserve_gift(name, message, gift_id):
         # add guest to db
         guest = Guest(
             name=name,
-            message=message,
+            message="no message",
             gift=gift
         )
         session.add(guest)
