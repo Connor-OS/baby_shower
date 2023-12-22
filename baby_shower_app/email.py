@@ -7,6 +7,8 @@ def send_reserve_email(gift, guest, message):
     password = "wsepqjfbfvdqpkll"
     if not message:
         message = "<blank>"
+    else:
+        message = message.encode('utf-8')
     sender_email = "arai.and.connor@gmail.com"
     receiver_email = ["coshaughnessy1@gmail.com", "akhmetovaarailym7@gmail.com"]
     email_template = """\
