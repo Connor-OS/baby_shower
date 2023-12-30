@@ -29,7 +29,7 @@ def add_db():
     engine = get_db()
 
     with engine.connect() as connection:
-        gift_df = pd.read_csv("./baby_shower_app/static/db_add.csv")
+        gift_df = pd.read_csv("./baby_shower_app/static/db_add.csv", engine='python')
         gift_df.to_sql("gift", con=connection, index=False, if_exists="append")
 
 

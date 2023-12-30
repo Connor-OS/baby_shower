@@ -28,6 +28,7 @@ def reserve_gift(name, message, gift_id):
         gift.bought = True
 
         # add guest to db
+        # TODO fix sending message to db
         guest = Guest(
             name=name,
             message="no message",
